@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OptionScreener — Daily Strategy Candidates — 2026-09-08</title>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--line:#262b36;--fg:#e6e8ee;--mute:#8b93a7;--acc:#5aa9ff;--good:#3ecf8e;--warn:#f5b342;--bad:#ff6b6b;--tag:#232838}
+@media (prefers-color-scheme: light){:root{--bg:#f6f7f9;--card:#fff;--line:#e3e6ec;--fg:#151821;--mute:#5d6577;--tag:#eef1f6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:34px 0 4px}.sub{color:var(--mute);font-size:13px;margin:0 0 6px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}.meta span{background:var(--tag);border:1px solid var(--line);border-radius:6px;padding:4px 9px;font-size:12px;color:var(--mute)}
+.meta b{color:var(--fg);font-weight:600}
+.badge{display:inline-block;padding:2px 7px;border-radius:5px;font-size:11px;font-weight:600;letter-spacing:.02em}
+.demo{background:var(--warn);color:#000}.live{background:var(--good);color:#000}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:10px}
+th,td{padding:6px 8px;font-size:13px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);font-weight:600;background:var(--tag)}
+td:first-child,th:first-child,td.l,th.l{text-align:left}tr:last-child td{border-bottom:0}
+.sym{font-weight:700;color:var(--acc)}.sec{color:var(--mute);font-size:12px}
+.score{font-weight:700}.s-hi{color:var(--good)}.s-md{color:var(--warn)}.s-lo{color:var(--mute)}
+.bar{display:inline-block;height:6px;border-radius:3px;background:var(--acc);vertical-align:middle;margin-left:6px}
+.note{color:var(--mute);font-size:11px;white-space:normal;min-width:150px}
+.fac{color:var(--mute);font-size:11px;white-space:normal;max-width:300px}
+details{margin-top:10px}summary{cursor:pointer;color:var(--mute);font-size:13px}
+.scroll{overflow-x:auto}.empty{color:var(--mute);padding:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:10px}
+.multi span{display:inline-block;background:var(--tag);border:1px solid var(--line);border-radius:6px;padding:4px 8px;margin:3px 4px 0 0;font-size:12px}
+.foot{margin-top:40px;color:var(--mute);font-size:12px;border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body><div class="wrap">
+<h1>OptionScreener — Daily Strategy Candidates</h1>
+<p class="sub">2026-09-08 · S&amp;P 500 + Nasdaq 100 · <span class="badge demo">DEMO</span></p>
+<div class="meta">
+  <span>Universe <b>15</b></span>
+  <span>Priced <b>15</b></span>
+  <span>Chains analysed <b>15</b></span>
+  <span>IV history <b>0d</b> (rank via HV proxy)</span>
+  <span>Run time <b>0.1s</b></span>
+</div>
+
+
+<h2>Multi-strategy names</h2>
+<p class="sub">Qualify in the top list of more than one strategy. Hover a score for its factor breakdown.</p>
+<div class="multi"><span><b>META</b> · csp 85.9 / cc 79.7 / spread 80.1</span><span><b>JPM</b> · csp 70.4 / cc 72.4</span><span><b>TSLA</b> · csp 65.8 / cc 49.4 / spread 73.0</span><span><b>CRM</b> · csp 55.8 / cc 47.1</span><span><b>XOM</b> · csp 50.3 / cc 63.2 / spread 41.0</span></div>
+
+
+
+
+
+
+<h2>Cash-Secured Put / Wheel</h2>
+<p class="sub">Sell ~30Δ put on quality names with elevated IV, uptrend or pullback to support, no earnings before expiry. — 6 candidates, showing top 6.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Exp</th><th>Strike</th><th>Δ</th><th>Credit</th><th>Cushion</th><th>Ann. yield</th>
+
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">META</span> <span class="sec">Communication</span></td>
+<td title="iv_rank 25/25 · iv_vs_hv 15/15 · trend 20/20 · pullback 3/10 · quality 14/15 · liquidity 4/10 · yield 5/5"><span class="score s-hi">85.9</span><span class="bar" style="width:51px"></span></td>
+<td>520.00</td><td>41%</td><td>79</td><td>1.41</td>
+<td>up</td><td>62</td>
+
+<td>2026-10-13 (35d)</td><td>494.00</td><td>-0.31</td><td>14.32</td><td>5.0%</td><td>30.2%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">2</td>
+<td class="l"><span class="sym">JPM</span> <span class="sec">Financials</span></td>
+<td title="iv_rank 21/25 · iv_vs_hv 5/15 · trend 11/20 · pullback 10/10 · quality 14/15 · liquidity 9/10 · yield 1/5"><span class="score s-hi">70.4</span><span class="bar" style="width:42px"></span></td>
+<td>210.00</td><td>22%</td><td>62</td><td>0.91</td>
+<td>flat</td><td>38</td>
+
+<td>2026-10-13 (35d)</td><td>202.00</td><td>-0.26</td><td>2.36</td><td>3.8%</td><td>12.2%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">3</td>
+<td class="l"><span class="sym">INTC</span> <span class="sec">Technology</span></td>
+<td title="iv_rank 15/25 · iv_vs_hv 12/15 · trend 6/20 · pullback 10/10 · quality 12/15 · liquidity 9/10 · yield 5/5"><span class="score s-md">68.5</span><span class="bar" style="width:41px"></span></td>
+<td>22.00</td><td>59%</td><td>49</td><td>1.09</td>
+<td>flat</td><td>48</td>
+
+<td>2026-10-13 (35d)</td><td>20.00</td><td>-0.27</td><td>0.76</td><td>9.1%</td><td>39.5%</td>
+
+<td class="l note">IV rank via HV proxy; earnings in 45d (after expiry)</td>
+</tr>
+
+<tr>
+<td class="l">4</td>
+<td class="l"><span class="sym">TSLA</span> <span class="sec">Consumer Discretionary</span></td>
+<td title="iv_rank 5/25 · iv_vs_hv 11/15 · trend 20/20 · pullback 6/10 · quality 14/15 · liquidity 5/10 · yield 5/5"><span class="score s-md">65.8</span><span class="bar" style="width:39px"></span></td>
+<td>240.00</td><td>53%</td><td>29</td><td>1.07</td>
+<td>up</td><td>54</td>
+
+<td>2026-10-13 (35d)</td><td>222.00</td><td>-0.29</td><td>7.99</td><td>7.5%</td><td>37.5%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">5</td>
+<td class="l"><span class="sym">CRM</span> <span class="sec">Technology</span></td>
+<td title="iv_rank 7/25 · iv_vs_hv 15/15 · trend 6/20 · pullback 8/10 · quality 11/15 · liquidity 8/10 · yield 1/5"><span class="score s-md">55.8</span><span class="bar" style="width:33px"></span></td>
+<td>260.00</td><td>27%</td><td>33</td><td>1.34</td>
+<td>flat</td><td>36</td>
+
+<td>2026-10-13 (35d)</td><td>248.00</td><td>-0.26</td><td>3.70</td><td>4.6%</td><td>15.5%</td>
+
+<td class="l note">IV rank via HV proxy; earnings in 45d (after expiry)</td>
+</tr>
+
+<tr>
+<td class="l">6</td>
+<td class="l"><span class="sym">XOM</span> <span class="sec">Energy</span></td>
+<td title="iv_rank 13/25 · iv_vs_hv 0/15 · trend 13/20 · pullback 5/10 · quality 14/15 · liquidity 6/10 · yield 0/5"><span class="score s-lo">50.3</span><span class="bar" style="width:30px"></span></td>
+<td>115.00</td><td>21%</td><td>45</td><td>0.77</td>
+<td>up</td><td>63</td>
+
+<td>2026-10-13 (35d)</td><td>110.00</td><td>-0.22</td><td>1.01</td><td>4.3%</td><td>9.6%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+</tbody></table></div>
+
+
+<h2>Covered Call / Buy-Write</h2>
+<p class="sub">Sell ~30Δ call against stock on stable names with rich IV, moderate momentum, no earnings before expiry. — 5 candidates, showing top 5.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Exp</th><th>Strike</th><th>Δ</th><th>Credit</th><th>To strike</th><th>Ann. yield</th>
+
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">META</span> <span class="sec">Communication</span></td>
+<td title="iv_rank 20/20 · iv_vs_hv 8/20 · stability 16/20 · momentum 15/15 · quality 9/10 · liquidity 7/10 · yield 5/5"><span class="score s-hi">79.7</span><span class="bar" style="width:47px"></span></td>
+<td>520.00</td><td>41%</td><td>79</td><td>1.41</td>
+<td>up</td><td>62</td>
+
+<td>2026-10-13 (35d)</td><td>559.00</td><td>0.32</td><td>12.59</td><td>7.5%</td><td>25.2%</td>
+
+<td class="l note">div yield 3.0%; IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">2</td>
+<td class="l"><span class="sym">JPM</span> <span class="sec">Financials</span></td>
+<td title="iv_rank 19/20 · iv_vs_hv 4/20 · stability 16/20 · momentum 12/15 · quality 9/10 · liquidity 10/10 · yield 2/5"><span class="score s-hi">72.4</span><span class="bar" style="width:43px"></span></td>
+<td>210.00</td><td>22%</td><td>62</td><td>0.91</td>
+<td>flat</td><td>38</td>
+
+<td>2026-10-13 (35d)</td><td>217.00</td><td>0.35</td><td>3.25</td><td>3.3%</td><td>16.1%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">3</td>
+<td class="l"><span class="sym">XOM</span> <span class="sec">Energy</span></td>
+<td title="iv_rank 12/20 · iv_vs_hv 0/20 · stability 19/20 · momentum 14/15 · quality 9/10 · liquidity 8/10 · yield 1/5"><span class="score s-md">63.2</span><span class="bar" style="width:37px"></span></td>
+<td>115.00</td><td>21%</td><td>45</td><td>0.77</td>
+<td>up</td><td>63</td>
+
+<td>2026-10-13 (35d)</td><td>120.00</td><td>0.29</td><td>1.30</td><td>4.3%</td><td>11.8%</td>
+
+<td class="l note">div yield 2.0%; IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">4</td>
+<td class="l"><span class="sym">TSLA</span> <span class="sec">Consumer Discretionary</span></td>
+<td title="iv_rank 6/20 · iv_vs_hv 0/20 · stability 9/20 · momentum 15/15 · quality 9/10 · liquidity 6/10 · yield 5/5"><span class="score s-lo">49.4</span><span class="bar" style="width:29px"></span></td>
+<td>240.00</td><td>53%</td><td>29</td><td>1.07</td>
+<td>up</td><td>54</td>
+
+<td>2026-10-13 (35d)</td><td>264.00</td><td>0.32</td><td>7.58</td><td>10.0%</td><td>33.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">5</td>
+<td class="l"><span class="sym">CRM</span> <span class="sec">Technology</span></td>
+<td title="iv_rank 7/20 · iv_vs_hv 3/20 · stability 14/20 · momentum 7/15 · quality 7/10 · liquidity 5/10 · yield 3/5"><span class="score s-lo">47.1</span><span class="bar" style="width:28px"></span></td>
+<td>260.00</td><td>27%</td><td>33</td><td>1.34</td>
+<td>flat</td><td>36</td>
+
+<td>2026-10-13 (35d)</td><td>272.00</td><td>0.33</td><td>4.49</td><td>4.6%</td><td>18.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+</tbody></table></div>
+
+
+<h2>Credit Spread (Bull Put / Bear Call)</h2>
+<p class="sub">Defined-risk vertical: bull put in uptrends, bear call in downtrends; needs trend persistence, IV rank and liquid strikes. — 3 candidates, showing top 3.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Type</th><th>Exp</th><th>Short/Long</th><th>Credit</th><th>Max loss</th><th>RoR</th><th>Cushion</th>
+
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">META</span> <span class="sec">Communication</span></td>
+<td title="trend_strength 30/30 · iv_rank 20/20 · cushion 4/15 · liquidity 6/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-hi">80.1</span><span class="bar" style="width:48px"></span></td>
+<td>520.00</td><td>41%</td><td>79</td><td>1.41</td>
+<td>up</td><td>62</td>
+
+<td>bull_put</td><td>2026-10-13 (35d)</td><td>494.00 / 468.00</td><td>6.81</td><td>19.19</td><td>35.5%</td><td>5.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">2</td>
+<td class="l"><span class="sym">TSLA</span> <span class="sec">Consumer Discretionary</span></td>
+<td title="trend_strength 30/30 · iv_rank 6/20 · cushion 10/15 · liquidity 8/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-hi">73.0</span><span class="bar" style="width:43px"></span></td>
+<td>240.00</td><td>53%</td><td>29</td><td>1.07</td>
+<td>up</td><td>54</td>
+
+<td>bull_put</td><td>2026-10-13 (35d)</td><td>222.00 / 210.00</td><td>3.11</td><td>8.89</td><td>35.0%</td><td>7.5%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">3</td>
+<td class="l"><span class="sym">XOM</span> <span class="sec">Energy</span></td>
+<td title="trend_strength 7/30 · iv_rank 12/20 · cushion 3/15 · liquidity 8/15 · reward_risk 6/15 · not_extended 5/5"><span class="score s-lo">41.0</span><span class="bar" style="width:24px"></span></td>
+<td>115.00</td><td>21%</td><td>45</td><td>0.77</td>
+<td>up</td><td>63</td>
+
+<td>bull_put</td><td>2026-10-13 (35d)</td><td>110.00 / 104.00</td><td>0.81</td><td>5.19</td><td>15.5%</td><td>4.3%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+</tbody></table></div>
+
+
+<h2>Earnings Play (Straddle / Strangle / Iron Condor)</h2>
+<p class="sub">Compare straddle-implied move with realised moves over the last 8 reports; sell premium when rich, buy when cheap. — 7 candidates, showing top 7.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Earnings</th><th>Implied (event)</th><th>Realised avg</th><th>Ratio</th><th>Bias</th><th>Structure</th>
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">KO</span> <span class="sec">Consumer Staples</span></td>
+<td title="edge 40/40 · consistency 11/20 · liquidity 12/20 · timing 10/10 · history_depth 5/10"><span class="score s-hi">78.5</span><span class="bar" style="width:47px"></span></td>
+<td>68.00</td><td>24%</td><td>100</td><td>2.05</td>
+<td>flat</td><td>52</td>
+
+<td>2026-09-13 (5d)</td><td>4.8%</td><td>1.0% (n=6)</td><td>4.9×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note"></td>
+</tr>
+
+<tr>
+<td class="l">2</td>
+<td class="l"><span class="sym">MSFT</span> <span class="sec">Technology</span></td>
+<td title="edge 40/40 · consistency 6/20 · liquidity 11/20 · timing 6/10 · history_depth 5/10"><span class="score s-md">67.8</span><span class="bar" style="width:40px"></span></td>
+<td>420.00</td><td>29%</td><td>100</td><td>1.07</td>
+<td>down</td><td>34</td>
+
+<td>2026-09-17 (9d)</td><td>4.4%</td><td>1.8% (n=6)</td><td>2.47×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note"></td>
+</tr>
+
+<tr>
+<td class="l">3</td>
+<td class="l"><span class="sym">NFLX</span> <span class="sec">Communication</span></td>
+<td title="edge 40/40 · consistency 11/20 · liquidity 7/20 · timing 6/10 · history_depth 5/10"><span class="score s-md">67.7</span><span class="bar" style="width:40px"></span></td>
+<td>680.00</td><td>60%</td><td>100</td><td>1.90</td>
+<td>flat</td><td>59</td>
+
+<td>2026-09-17 (9d)</td><td>11.7%</td><td>2.1% (n=6)</td><td>5.68×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note"></td>
+</tr>
+
+<tr>
+<td class="l">4</td>
+<td class="l"><span class="sym">NVDA</span> <span class="sec">Technology</span></td>
+<td title="edge 40/40 · consistency 5/20 · liquidity 11/20 · timing 6/10 · history_depth 5/10"><span class="score s-md">65.7</span><span class="bar" style="width:39px"></span></td>
+<td>125.00</td><td>64%</td><td>100</td><td>1.16</td>
+<td>flat</td><td>60</td>
+
+<td>2026-09-17 (9d)</td><td>9.3%</td><td>3.3% (n=6)</td><td>2.8×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note">tail move 9% in history</td>
+</tr>
+
+<tr>
+<td class="l">5</td>
+<td class="l"><span class="sym">COST</span> <span class="sec">Consumer Staples</span></td>
+<td title="edge 40/40 · consistency 9/20 · liquidity 9/20 · timing 2/10 · history_depth 5/10"><span class="score s-md">64.6</span><span class="bar" style="width:38px"></span></td>
+<td>880.00</td><td>31%</td><td>100</td><td>1.45</td>
+<td>up</td><td>61</td>
+
+<td>2026-09-20 (12d)</td><td>5.8%</td><td>1.8% (n=6)</td><td>3.23×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note"></td>
+</tr>
+
+<tr>
+<td class="l">6</td>
+<td class="l"><span class="sym">AVGO</span> <span class="sec">Technology</span></td>
+<td title="edge 40/40 · consistency 3/20 · liquidity 5/20 · timing 10/10 · history_depth 5/10"><span class="score s-md">62.6</span><span class="bar" style="width:37px"></span></td>
+<td>170.00</td><td>68%</td><td>100</td><td>1.59</td>
+<td>down</td><td>46</td>
+
+<td>2026-09-13 (5d)</td><td>13.8%</td><td>2.5% (n=6)</td><td>5.57×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note"></td>
+</tr>
+
+<tr>
+<td class="l">7</td>
+<td class="l"><span class="sym">AAPL</span> <span class="sec">Technology</span></td>
+<td title="edge 40/40 · consistency 6/20 · liquidity 3/20 · timing 2/10 · history_depth 5/10"><span class="score s-md">56.0</span><span class="bar" style="width:33px"></span></td>
+<td>230.00</td><td>53%</td><td>100</td><td>2.25</td>
+<td>flat</td><td>49</td>
+
+<td>2026-09-20 (12d)</td><td>11.7%</td><td>2.1% (n=6)</td><td>5.62×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note">tail move 5% in history</td>
+</tr>
+
+</tbody></table></div>
+
+
+
+<details><summary>Methodology</summary>
+<p class="sub">Stage 1 ranks the full universe on price data alone (liquidity, trend, HV range, RSI) and forwards the top 15 to Stage 2, which pulls the 25–50 DTE option chain, fundamentals and earnings dates. Each strategy applies hard filters (liquidity at the target strike, earnings exclusion, trend direction) and then scores 0–100 across weighted factors shown under each score. IV Rank uses the stored ATM-IV history once ≥60 days exist; before that a realised-vol distribution proxy is used and flagged. Deltas are Black–Scholes from chain IV. Not investment advice.</p>
+</details>
+
+<div class="foot">OptionScreener v0.1.0 · generated 2026-09-08 · data: Yahoo Finance via yfinance (delayed)</div>
+</div></body></html>

@@ -1,0 +1,38 @@
+# OptionScreener configuration
+universe:
+  sources: [sp500, ndx100]        # Wikipedia-sourced constituent lists, cached in data/universe.csv
+  extra_symbols: []               # manual additions
+  exclude_symbols: []             # manual removals
+  min_price: 15                   # skip low-priced names (poor strike granularity)
+  min_avg_dollar_volume: 50_000_000
+
+prefilter:
+  # Stage 1 runs on batch price data only (cheap). Top-N by prefilter score
+  # proceed to Stage 2 (option chains + fundamentals via yfinance, expensive).
+  top_n: 150
+
+options:
+  target_dte_min: 25
+  target_dte_max: 50
+  min_pre_earnings_dte: 10        # when earnings fall inside the band, use the last expiry before it (>= this DTE)
+  short_put_delta: 0.30           # CSP / bull put short leg
+  short_call_delta: 0.30          # covered call / bear call short leg
+  spread_width_pct: 0.05          # credit spread wing width as % of price
+  min_open_interest: 200
+  max_bid_ask_pct: 0.60           # HARD reject only for garbage quotes; spread otherwise affects score only
+                                  # (after-hours / weekend snapshots carry widened MM quotes — OI is the reliable gauge)
+  risk_free_rate: 0.04
+
+iv_rank:
+  min_history_days: 60            # below this, fall back to IV/HV-based proxy
+  lookback_days: 252
+
+earnings:
+  window_days: 14                 # earnings within N days -> earnings-play candidate
+  exclusion_days: 7               # other strategies penalised if earnings within N days of expiry window
+  lookback_events: 8              # realised-move history
+
+report:
+  top_per_strategy: 15
+  title: "OptionScreener — Daily Strategy Candidates"
+  output_dir: reports

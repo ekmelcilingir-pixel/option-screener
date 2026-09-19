@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+reports/*.csv
+reports/meta.json
+reports/latest_copy.html
+data/cache/
+.venv/
+.DS_Store
+run.log
+_old/

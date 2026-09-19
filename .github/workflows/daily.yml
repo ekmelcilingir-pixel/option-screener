@@ -1,0 +1,69 @@
+name: Daily OptionScreener
+
+on:
+  schedule:
+    - cron: "40 21 * * 1-5"      # 21:40 UTC, after US close (Mon-Fri)
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Limit universe to first N symbols (0 = all)"
+        default: "0"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: screener
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run screener
+        run: |
+          LIMIT="${{ github.event.inputs.limit || '0' }}"
+          if [ "$LIMIT" != "0" ]; then python -m screener.run --limit "$LIMIT"; else python -m screener.run; fi
+
+      - name: Commit IV history + report
+        run: |
+          git config user.name "option-screener-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/iv_history.csv data/universe.csv reports/
+          git diff --cached --quiet || git commit -m "screener: $(date -u +%F)"
+          git push
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ github.run_id }}
+          path: reports/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports/
+
+  publish:
+    needs: screen
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

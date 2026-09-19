@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — {{ meta.date }}</title>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--line:#262b36;--fg:#e6e8ee;--mute:#8b93a7;--acc:#5aa9ff;--good:#3ecf8e;--warn:#f5b342;--bad:#ff6b6b;--tag:#232838}
+@media (prefers-color-scheme: light){:root{--bg:#f6f7f9;--card:#fff;--line:#e3e6ec;--fg:#151821;--mute:#5d6577;--tag:#eef1f6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:34px 0 4px}.sub{color:var(--mute);font-size:13px;margin:0 0 6px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}.meta span{background:var(--tag);border:1px solid var(--line);border-radius:6px;padding:4px 9px;font-size:12px;color:var(--mute)}
+.meta b{color:var(--fg);font-weight:600}
+.badge{display:inline-block;padding:2px 7px;border-radius:5px;font-size:11px;font-weight:600;letter-spacing:.02em}
+.demo{background:var(--warn);color:#000}.live{background:var(--good);color:#000}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:10px}
+th,td{padding:6px 8px;font-size:13px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);font-weight:600;background:var(--tag)}
+td:first-child,th:first-child,td.l,th.l{text-align:left}tr:last-child td{border-bottom:0}
+.sym{font-weight:700;color:var(--acc)}.sec{color:var(--mute);font-size:12px}
+.score{font-weight:700}.s-hi{color:var(--good)}.s-md{color:var(--warn)}.s-lo{color:var(--mute)}
+.bar{display:inline-block;height:6px;border-radius:3px;background:var(--acc);vertical-align:middle;margin-left:6px}
+.note{color:var(--mute);font-size:11px;white-space:normal;min-width:150px}
+.fac{color:var(--mute);font-size:11px;white-space:normal;max-width:300px}
+details{margin-top:10px}summary{cursor:pointer;color:var(--mute);font-size:13px}
+.scroll{overflow-x:auto}.empty{color:var(--mute);padding:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:10px}
+.multi span{display:inline-block;background:var(--tag);border:1px solid var(--line);border-radius:6px;padding:4px 8px;margin:3px 4px 0 0;font-size:12px}
+.foot{margin-top:40px;color:var(--mute);font-size:12px;border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body><div class="wrap">
+<h1>{{ title }}</h1>
+<p class="sub">{{ meta.date }} · S&amp;P 500 + Nasdaq 100 · <span class="badge {{ meta.mode }}">{{ meta.mode|upper }}</span></p>
+<div class="meta">
+  <span>Universe <b>{{ meta.universe_size }}</b></span>
+  <span>Priced <b>{{ meta.priced }}</b></span>
+  <span>Chains analysed <b>{{ meta.featured }}</b></span>
+  <span>IV history <b>{{ meta.iv_history_days }}d</b>{% if meta.iv_history_days < 60 %} (rank via HV proxy){% endif %}</span>
+  <span>Run time <b>{{ meta.elapsed_s }}s</b></span>
+</div>
+
+{% if multi %}
+<h2>Multi-strategy names</h2>
+<p class="sub">Qualify in the top list of more than one strategy. Hover a score for its factor breakdown.</p>
+<div class="multi">{% for s, v in multi.items() %}<span><b>{{ s }}</b> · {% for k, sc in v %}{{ k }} {{ sc }}{% if not loop.last %} / {% endif %}{% endfor %}</span>{% endfor %}</div>
+{% endif %}
+
+{% macro score(c) -%}
+<span class="score {% if c.score >= 70 %}s-hi{% elif c.score >= 55 %}s-md{% else %}s-lo{% endif %}">{{ c.score }}</span><span class="bar" style="width:{{ (c.score * 0.6)|int }}px"></span>
+{%- endmacro %}
+{% macro factors(c) -%}
+{% for k, v in c.factors.items() %}{{ k }} {{ v|round(0)|int }}/{{ c.max_points[k] }}{% if not loop.last %} · {% endif %}{% endfor %}
+{%- endmacro %}
+
+{% for sec in sections %}
+<h2>{{ sec.label }}</h2>
+<p class="sub">{{ sec.description }} — {{ sec.total }} candidates, showing top {{ sec.cands|length }}.</p>
+{% if not sec.cands %}<div class="empty">No candidates passed the hard filters today.</div>{% else %}
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+{% if sec.key == 'csp' %}<th>Exp</th><th>Strike</th><th>Δ</th><th>Credit</th><th>Cushion</th><th>Ann. yield</th>
+{% elif sec.key == 'cc' %}<th>Exp</th><th>Strike</th><th>Δ</th><th>Credit</th><th>To strike</th><th>Ann. yield</th>
+{% elif sec.key == 'spread' %}<th>Type</th><th>Exp</th><th>Short/Long</th><th>Credit</th><th>Max loss</th><th>RoR</th><th>Cushion</th>
+{% else %}<th>Earnings</th><th>Implied (event)</th><th>Realised avg</th><th>Ratio</th><th>Bias</th><th>Structure</th>{% endif %}
+<th class="l">Notes</th></tr></thead>
+<tbody>
+{% for c in sec.cands %}{% set f = c.features %}{% set t = f.tech %}{% set s = c.setup %}
+<tr>
+<td class="l">{{ loop.index }}</td>
+<td class="l"><span class="sym">{{ c.symbol }}</span> <span class="sec">{{ c.sector }}</span></td>
+<td title="{{ factors(c) }}">{{ score(c) }}</td>
+<td>{{ t.price|num }}</td><td>{{ f.atm_iv|pct(0) }}</td><td>{{ f.iv_rank|num(0) }}</td><td>{{ f.iv_hv20|num }}</td>
+<td>{{ t.trend }}</td><td>{{ t.rsi14|num(0) }}</td>
+{% if sec.key == 'csp' %}
+<td>{{ s.expiry }} ({{ s.dte }}d)</td><td>{{ s.strike|num }}</td><td>{{ s.delta }}</td><td>{{ s.credit|num }}</td><td>{{ s.cushion_pct|pct }}</td><td>{{ s.annualised_yield|pct }}</td>
+{% elif sec.key == 'cc' %}
+<td>{{ s.expiry }} ({{ s.dte }}d)</td><td>{{ s.strike|num }}</td><td>{{ s.delta }}</td><td>{{ s.credit|num }}</td><td>{{ s.upside_to_strike_pct|pct }}</td><td>{{ s.annualised_yield|pct }}</td>
+{% elif sec.key == 'spread' %}
+<td>{{ s.type }}</td><td>{{ s.expiry }} ({{ s.dte }}d)</td><td>{{ s.short_strike|num }} / {{ s.long_strike|num }}</td><td>{{ s.net_credit|num }}</td><td>{{ s.max_loss|num }}</td><td>{{ s.return_on_risk|pct }}</td><td>{{ s.cushion_pct|pct }}</td>
+{% else %}
+<td>{{ s.earnings_date }} ({{ s.days_to_earnings }}d)</td><td>{{ s.implied_move_event|pct }}</td><td>{{ s.realised_avg|pct }} (n={{ s.n_events }})</td><td>{{ s.implied_vs_realised }}×</td><td>{{ s.bias }}</td><td>{{ s.structure }}</td>
+{% endif %}
+<td class="l note">{{ c.notes|join('; ') }}</td>
+</tr>
+{% endfor %}
+</tbody></table></div>
+{% endif %}
+{% endfor %}
+
+<details><summary>Methodology</summary>
+<p class="sub">Stage 1 ranks the full universe on price data alone (liquidity, trend, HV range, RSI) and forwards the top {{ meta.featured }} to Stage 2, which pulls the {{ '25–50' }} DTE option chain, fundamentals and earnings dates. Each strategy applies hard filters (liquidity at the target strike, earnings exclusion, trend direction) and then scores 0–100 across weighted factors shown under each score. IV Rank uses the stored ATM-IV history once ≥60 days exist; before that a realised-vol distribution proxy is used and flagged. Deltas are Black–Scholes from chain IV. Not investment advice.</p>
+</details>
+<details><summary>Hard-filter rejections</summary><p class="sub">
+{% for k, r in meta.rejections.items() %}<b>{{ k }}</b>: {% for reason, n in r.items() %}{{ reason }} {{ n }}{% if not loop.last %} · {% endif %}{% endfor %}<br>{% endfor %}
+{% if meta.no_chain %}<b>no usable chain</b>: {{ meta.no_chain|length }} ({{ meta.no_chain[:20]|join(', ') }}{% if meta.no_chain|length > 20 %}…{% endif %}){% endif %}</p></details>
+{% if meta.errors %}<details><summary>Data errors ({{ meta.errors|length }})</summary><p class="sub">{% for s, e in meta.errors.items() %}<b>{{ s }}</b>: {{ e|join(' | ') }}<br>{% endfor %}</p></details>{% endif %}
+<div class="foot">OptionScreener v{{ meta.version }} · generated {{ meta.date }} · data: Yahoo Finance via yfinance (delayed)</div>
+</div></body></html>
