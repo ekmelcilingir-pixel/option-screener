@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OptionScreener — Daily Strategy Candidates — 2026-11-24</title>
+<title>OptionScreener — Daily Strategy Candidates — 2026-11-25</title>
 <style>
 :root{--bg:#0f1115;--card:#171a21;--line:#262b36;--fg:#e6e8ee;--mute:#8b93a7;--acc:#5aa9ff;--good:#3ecf8e;--warn:#f5b342;--bad:#ff6b6b;--tag:#232838}
 @media (prefers-color-scheme: light){:root{--bg:#f6f7f9;--card:#fff;--line:#e3e6ec;--fg:#151821;--mute:#5d6577;--tag:#eef1f6}}
@@ -31,15 +31,19 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--mute);font-size:13px}
 </head>
 <body><div class="wrap">
 <h1>OptionScreener — Daily Strategy Candidates</h1>
-<p class="sub">2026-11-24 · S&amp;P 500 + Nasdaq 100 · <span class="badge live">LIVE</span></p>
+<p class="sub">2026-11-25 · S&amp;P 500 + Nasdaq 100 · <span class="badge live">LIVE</span></p>
 <div class="meta">
   <span>Universe <b>518</b></span>
   <span>Priced <b>150</b></span>
-  <span>Chains analysed <b>76</b></span>
-  <span>IV history <b>43d</b> (rank via HV proxy)</span>
-  <span>Run time <b>434.6s</b></span>
+  <span>Chains analysed <b>73</b></span>
+  <span>IV history <b>44d</b> (rank via HV proxy)</span>
+  <span>Run time <b>437.7s</b></span>
 </div>
 
+
+<h2>Multi-strategy names</h2>
+<p class="sub">Qualify in the top list of more than one strategy. Hover a score for its factor breakdown.</p>
+<div class="multi"><span><b>AAPL</b> · csp 68.6 / cc 74.5 / spread 63.5</span><span><b>LLY</b> · csp 63.0 / spread 64.4</span><span><b>MA</b> · csp 62.5 / spread 63.5</span></div>
 
 
 
@@ -47,28 +51,235 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--mute);font-size:13px}
 
 
 <h2>Cash-Secured Put / Wheel</h2>
-<p class="sub">Sell ~30Δ put on quality names with elevated IV, uptrend or pullback to support, no earnings before expiry. — 0 candidates, showing top 0.</p>
-<div class="empty">No candidates passed the hard filters today.</div>
+<p class="sub">Sell ~30Δ put on quality names with elevated IV, uptrend or pullback to support, no earnings before expiry. — 3 candidates, showing top 3.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Exp</th><th>Strike</th><th>Δ</th><th>Credit</th><th>Cushion</th><th>Ann. yield</th>
+
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">AAPL</span> <span class="sec">Information Technology</span></td>
+<td title="iv_rank 16/25 · iv_vs_hv 3/15 · trend 19/20 · pullback 9/10 · quality 14/15 · liquidity 6/10 · yield 2/5"><span class="score s-md">68.6</span><span class="bar" style="width:41px"></span></td>
+<td>354.07</td><td>25%</td><td>53</td><td>0.87</td>
+<td>up</td><td>57</td>
+
+<td>2026-12-31 (36d)</td><td>340.00</td><td>-0.28</td><td>5.38</td><td>4.0%</td><td>16.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">2</td>
+<td class="l"><span class="sym">LLY</span> <span class="sec">Health Care</span></td>
+<td title="iv_rank 14/25 · iv_vs_hv 7/15 · trend 20/20 · pullback 4/10 · quality 14/15 · liquidity 0/10 · yield 4/5"><span class="score s-md">63.0</span><span class="bar" style="width:37px"></span></td>
+<td>1,407.59</td><td>37%</td><td>47</td><td>0.96</td>
+<td>up</td><td>59</td>
+
+<td>2026-12-31 (36d)</td><td>1,355.00</td><td>-0.34</td><td>34.83</td><td>3.7%</td><td>26.1%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">3</td>
+<td class="l"><span class="sym">MA</span> <span class="sec">Financials</span></td>
+<td title="iv_rank 18/25 · iv_vs_hv 1/15 · trend 20/20 · pullback 8/10 · quality 13/15 · liquidity 0/10 · yield 2/5"><span class="score s-md">62.5</span><span class="bar" style="width:37px"></span></td>
+<td>647.44</td><td>26%</td><td>57</td><td>0.83</td>
+<td>up</td><td>56</td>
+
+<td>2026-12-31 (36d)</td><td>630.00</td><td>-0.34</td><td>11.40</td><td>2.7%</td><td>18.3%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+</tbody></table></div>
+
 
 <h2>Covered Call / Buy-Write</h2>
-<p class="sub">Sell ~30Δ call against stock on stable names with rich IV, moderate momentum, no earnings before expiry. — 0 candidates, showing top 0.</p>
-<div class="empty">No candidates passed the hard filters today.</div>
+<p class="sub">Sell ~30Δ call against stock on stable names with rich IV, moderate momentum, no earnings before expiry. — 1 candidates, showing top 1.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Exp</th><th>Strike</th><th>Δ</th><th>Credit</th><th>To strike</th><th>Ann. yield</th>
+
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">AAPL</span> <span class="sec">Information Technology</span></td>
+<td title="iv_rank 15/20 · iv_vs_hv 6/20 · stability 19/20 · momentum 15/15 · quality 9/10 · liquidity 7/10 · yield 3/5"><span class="score s-hi">74.5</span><span class="bar" style="width:44px"></span></td>
+<td>354.07</td><td>25%</td><td>53</td><td>0.87</td>
+<td>up</td><td>57</td>
+
+<td>2026-12-31 (36d)</td><td>365.00</td><td>0.37</td><td>5.92</td><td>3.1%</td><td>17.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+</tbody></table></div>
+
 
 <h2>Credit Spread (Bull Put / Bear Call)</h2>
-<p class="sub">Defined-risk vertical: bull put in uptrends, bear call in downtrends; needs trend persistence, IV rank and liquid strikes. — 0 candidates, showing top 0.</p>
-<div class="empty">No candidates passed the hard filters today.</div>
+<p class="sub">Defined-risk vertical: bull put in uptrends, bear call in downtrends; needs trend persistence, IV rank and liquid strikes. — 9 candidates, showing top 9.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Type</th><th>Exp</th><th>Short/Long</th><th>Credit</th><th>Max loss</th><th>RoR</th><th>Cushion</th>
+
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">GOOGL</span> <span class="sec">Communication Services</span></td>
+<td title="trend_strength 30/30 · iv_rank 16/20 · cushion 10/15 · liquidity 6/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-hi">81.2</span><span class="bar" style="width:48px"></span></td>
+<td>279.05</td><td>40%</td><td>54</td><td>0.66</td>
+<td>down</td><td>40</td>
+
+<td>bear_call</td><td>2026-12-31 (36d)</td><td>300.00 / 315.00</td><td>3.19</td><td>11.81</td><td>27.0%</td><td>7.5%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">2</td>
+<td class="l"><span class="sym">GOOG</span> <span class="sec">Communication Services</span></td>
+<td title="trend_strength 30/30 · iv_rank 16/20 · cushion 12/15 · liquidity 5/15 · reward_risk 12/15 · not_extended 5/5"><span class="score s-hi">80.2</span><span class="bar" style="width:48px"></span></td>
+<td>276.58</td><td>39%</td><td>56</td><td>0.67</td>
+<td>down</td><td>39</td>
+
+<td>bear_call</td><td>2026-12-31 (36d)</td><td>300.00 / 315.00</td><td>2.71</td><td>12.29</td><td>22.1%</td><td>8.5%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">3</td>
+<td class="l"><span class="sym">NFLX</span> <span class="sec">Communication Services</span></td>
+<td title="trend_strength 30/30 · iv_rank 15/20 · cushion 9/15 · liquidity 6/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-hi">80.1</span><span class="bar" style="width:48px"></span></td>
+<td>58.87</td><td>39%</td><td>53</td><td>1.19</td>
+<td>down</td><td>37</td>
+
+<td>bear_call</td><td>2026-12-31 (36d)</td><td>63.00 / 66.00</td><td>0.70</td><td>2.30</td><td>30.2%</td><td>7.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">4</td>
+<td class="l"><span class="sym">UBER</span> <span class="sec">Industrials</span></td>
+<td title="trend_strength 26/30 · iv_rank 20/20 · cushion 14/15 · liquidity 3/15 · reward_risk 9/15 · not_extended 5/5"><span class="score s-hi">77.4</span><span class="bar" style="width:46px"></span></td>
+<td>64.70</td><td>39%</td><td>67</td><td>1.12</td>
+<td>down</td><td>39</td>
+
+<td>bear_call</td><td>2026-12-31 (36d)</td><td>71.00 / 74.00</td><td>0.48</td><td>2.52</td><td>19.3%</td><td>9.7%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">5</td>
+<td class="l"><span class="sym">BA</span> <span class="sec">Industrials</span></td>
+<td title="trend_strength 30/30 · iv_rank 17/20 · cushion 15/15 · liquidity 0/15 · reward_risk 7/15 · not_extended 5/5"><span class="score s-hi">74.3</span><span class="bar" style="width:44px"></span></td>
+<td>163.59</td><td>37%</td><td>59</td><td>1.18</td>
+<td>down</td><td>38</td>
+
+<td>bear_call</td><td>2026-12-31 (36d)</td><td>180.00 / 190.00</td><td>1.45</td><td>8.55</td><td>16.9%</td><td>10.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">6</td>
+<td class="l"><span class="sym">LLY</span> <span class="sec">Health Care</span></td>
+<td title="trend_strength 30/30 · iv_rank 13/20 · cushion 2/15 · liquidity 0/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-md">64.4</span><span class="bar" style="width:38px"></span></td>
+<td>1,407.59</td><td>37%</td><td>47</td><td>0.96</td>
+<td>up</td><td>59</td>
+
+<td>bull_put</td><td>2026-12-31 (36d)</td><td>1,355.00 / 1,285.00</td><td>17.05</td><td>52.95</td><td>32.2%</td><td>3.7%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">7</td>
+<td class="l"><span class="sym">MA</span> <span class="sec">Financials</span></td>
+<td title="trend_strength 26/30 · iv_rank 17/20 · cushion 0/15 · liquidity 1/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-md">63.5</span><span class="bar" style="width:38px"></span></td>
+<td>647.44</td><td>26%</td><td>57</td><td>0.83</td>
+<td>up</td><td>56</td>
+
+<td>bull_put</td><td>2026-12-31 (36d)</td><td>630.00 / 600.00</td><td>6.05</td><td>23.95</td><td>25.3%</td><td>2.7%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">8</td>
+<td class="l"><span class="sym">AAPL</span> <span class="sec">Information Technology</span></td>
+<td title="trend_strength 25/30 · iv_rank 15/20 · cushion 2/15 · liquidity 8/15 · reward_risk 8/15 · not_extended 5/5"><span class="score s-md">63.5</span><span class="bar" style="width:38px"></span></td>
+<td>354.07</td><td>25%</td><td>53</td><td>0.87</td>
+<td>up</td><td>57</td>
+
+<td>bull_put</td><td>2026-12-31 (36d)</td><td>340.00 / 320.00</td><td>3.08</td><td>16.92</td><td>18.2%</td><td>4.0%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+<tr>
+<td class="l">9</td>
+<td class="l"><span class="sym">NKE</span> <span class="sec">Consumer Discretionary</span></td>
+<td title="trend_strength 16/30 · iv_rank 12/20 · cushion 1/15 · liquidity 8/15 · reward_risk 15/15 · not_extended 5/5"><span class="score s-md">57.7</span><span class="bar" style="width:34px"></span></td>
+<td>35.75</td><td>41%</td><td>45</td><td>0.79</td>
+<td>down</td><td>46</td>
+
+<td>bear_call</td><td>2026-12-11 (16d)</td><td>37.00 / 39.00</td><td>0.40</td><td>1.60</td><td>25.0%</td><td>3.5%</td>
+
+<td class="l note">IV rank via HV proxy</td>
+</tr>
+
+</tbody></table></div>
+
 
 <h2>Earnings Play (Straddle / Strangle / Iron Condor)</h2>
-<p class="sub">Compare straddle-implied move with realised moves over the last 8 reports; sell premium when rich, buy when cheap. — 0 candidates, showing top 0.</p>
-<div class="empty">No candidates passed the hard filters today.</div>
+<p class="sub">Compare straddle-implied move with realised moves over the last 8 reports; sell premium when rich, buy when cheap. — 1 candidates, showing top 1.</p>
+
+<div class="scroll"><table>
+<thead><tr>
+<th class="l">#</th><th class="l">Symbol</th><th>Score</th><th>Price</th><th>IV</th><th>IV Rank</th><th>IV/HV20</th><th>Trend</th><th>RSI</th>
+<th>Earnings</th><th>Implied (event)</th><th>Realised avg</th><th>Ratio</th><th>Bias</th><th>Structure</th>
+<th class="l">Notes</th></tr></thead>
+<tbody>
+
+<tr>
+<td class="l">1</td>
+<td class="l"><span class="sym">ADBE</span> <span class="sec">Information Technology</span></td>
+<td title="edge 18/40 · consistency 7/20 · liquidity 0/20 · timing 0/10 · history_depth 10/10"><span class="score s-lo">34.7</span><span class="bar" style="width:20px"></span></td>
+<td>232.08</td><td>64%</td><td>100</td><td>1.94</td>
+<td>down</td><td>45</td>
+
+<td>2026-12-09 (14d)</td><td>9.2%</td><td>7.0% (n=8)</td><td>1.32×</td><td>sell_premium</td><td>iron_condor_or_short_strangle</td>
+
+<td class="l note"></td>
+</tr>
+
+</tbody></table></div>
+
 
 
 <details><summary>Methodology</summary>
-<p class="sub">Stage 1 ranks the full universe on price data alone (liquidity, trend, HV range, RSI) and forwards the top 76 to Stage 2, which pulls the 25–50 DTE option chain, fundamentals and earnings dates. Each strategy applies hard filters (liquidity at the target strike, earnings exclusion, trend direction) and then scores 0–100 across weighted factors shown under each score. IV Rank uses the stored ATM-IV history once ≥60 days exist; before that a realised-vol distribution proxy is used and flagged. Deltas are Black–Scholes from chain IV. Not investment advice.</p>
+<p class="sub">Stage 1 ranks the full universe on price data alone (liquidity, trend, HV range, RSI) and forwards the top 73 to Stage 2, which pulls the 25–50 DTE option chain, fundamentals and earnings dates. Each strategy applies hard filters (liquidity at the target strike, earnings exclusion, trend direction) and then scores 0–100 across weighted factors shown under each score. IV Rank uses the stored ATM-IV history once ≥60 days exist; before that a realised-vol distribution proxy is used and flagged. Deltas are Black–Scholes from chain IV. Not investment advice.</p>
 </details>
 <details><summary>Hard-filter rejections</summary><p class="sub">
-<b>csp</b>: illiquid 30Δ put 76<br><b>cc</b>: illiquid 30Δ call 76<br><b>spread</b>: illiquid short strike 69 · earnings before expiry 7<br><b>earnings</b>: no earnings in window 69 · illiquid event chain 7<br>
-<b>no usable chain</b>: 74 (HUBB, RL, HCA, KDP, HAS, AJG, ODFL, CBRE, PH, ROP, RMD, EQIX, VRSK, TT, WAT, SHW, LII, MSCI, TYL, A…)</p></details>
+<b>csp</b>: illiquid 30Δ put 65 · downtrend / >10% below SMA200 4 · earnings before expiry 1<br><b>cc</b>: illiquid 30Δ call 64 · downtrend 6 · earnings before expiry 2<br><b>spread</b>: illiquid short strike 60 · earnings before expiry 4<br><b>earnings</b>: no earnings in window 69 · illiquid event chain 3<br>
+<b>no usable chain</b>: 77 (NVR, HCA, KDP, HUBB, RL, HAS, AMT, ODFL, LII, PH, SW, EQIX, TT, SWK, WAT, SHW, FANG, RMD, MSCI, VRSK…)</p></details>
 
-<div class="foot">OptionScreener v0.2.3 · generated 2026-11-24 · data: Yahoo Finance via yfinance (delayed)</div>
+<div class="foot">OptionScreener v0.2.3 · generated 2026-11-25 · data: Yahoo Finance via yfinance (delayed)</div>
 </div></body></html>
